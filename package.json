@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
+    "tailwindcss-animated": "^1.0.1",
     "vite": "^5.0.10"
   }
 }
