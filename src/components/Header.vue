@@ -3,15 +3,15 @@
 </script>
 
 <template>
-<nav class="bg-gray-900">
-  <div class="max-w-screen-xl md:flex flex-wrap justify-between mx-auto p-4">
+<nav class="bg-blue-900">
+  <div class="max-w-screen-xl md:flex flex-wrap justify-between mx-auto p-6">
 
-  <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+  <a href="/" class="flex items-center gap-2">
+      <img src="/pochoclos.svg" class="h-8 animate-bounce" alt="Pool-e logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Pool-e Movies</span>
   </a>
 
-  <div class="flex md:order-2 mt-5">
+  <div class="flex md:order-2 mt-5 md:mt-0">
     <div class="relative md:block">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
