@@ -6,7 +6,7 @@
 
 <template>
 <nav class="bg-slate-900 md:fixed w-full top-0 z-40">
-  <div class="w-11/12 md:max-w-screen-xl md:flex flex-wrap justify-center md:justify-between mx-auto py-6">
+  <div class="w-11/12 md:max-w-screen-xl md:flex flex-wrap justify-center md:justify-between md:items-center mx-auto py-6">
 
   <nav class="flex justify-between items-center">
     <a href="/" class="flex items-center gap-2">
@@ -14,13 +14,20 @@
         <span class="self-center text-2xl font-bold whitespace-nowrap text-white">Pool-E movies</span>
     </a>
 
-    <button @click="router.push({name: 'favorites'})" type="button" class="p-2 bg-gray-700 rounded">
+    <button @click="router.push({name: 'favorites'})" type="button" class="lg:hidden p-2 bg-gray-700 rounded">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
       </svg>
 
     </button>
   </nav>
+
+  <button @click="router.push({name: 'favorites'})" type="button" class="hidden md:flex gap-1 text-white p-2 bg-gray-700 rounded hover:scale-110 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ef4444" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+      </svg>
+      My list
+  </button>
 
   <div class="flex md:order-2 mt-5 md:mt-0">
     <div class="relative md:block">
