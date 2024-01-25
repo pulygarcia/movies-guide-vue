@@ -29,7 +29,7 @@ import Spinner from '@/components/Spinner.vue';
   <div v-else class="h-full md:h-screen w-full flex flex-col justify-center"
     :style="{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://image.tmdb.org/t/p/original/${movie.poster_path}`, backgroundPosition: 'center'}"
   >
-    <div class="w-11/12 py-12 md:max-w-screen-xl mx-auto flex flex-col md:flex-row gap-4 md:gap-8 overflow-hidden">
+    <div class="w-11/12 py-12 md:max-w-screen-xl mx-auto flex flex-col md:flex-row gap-4 md:gap-8 overflow-hidden animate-fade-up">
       <img :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" alt="poster" class="w-52 md:w-80 rounded-2xl">
       <div class="flex flex-col gap-4 md:gap-6">
         <h2 class="text-white font-bold text-xl md:text-6xl">{{ movie.title }}</h2>
