@@ -1,7 +1,8 @@
 <script setup>
-  import { useRouter } from 'vue-router';
+  import { useRouter, useRoute } from 'vue-router';
 
   const router = useRouter();
+  const route = useRoute();
 </script>
 
 <template>
@@ -29,7 +30,10 @@
       Favorites list
   </button>
 
-  <div class="flex md:order-2 mt-5 md:mt-0">
+  <div 
+    class="flex md:order-2 mt-5 md:mt-0"
+    :class="route.path !== '/' ? 'hidden' : ''"
+  >
     <div class="relative md:block">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -38,10 +42,13 @@
       </div>
       
       <!-- PENDING: MAKE WORK THE INPUT -->
-      <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-white border border-gray-300 rounded-lg bg-slate-900" placeholder="Search...">
+      <input 
+        type="text" id="search-navbar" 
+        class="block w-full p-2 ps-10 text-sm text-white border border-gray-300 rounded-lg bg-slate-900"
+        placeholder="Search..."
+      >
     </div>
   </div>
-
   </div>
 </nav>
 </template>
