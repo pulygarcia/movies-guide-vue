@@ -17,11 +17,11 @@ onMounted(() => {
   <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black">
     <Header />
 
-    <div class="w-11/12 md:max-w-screen-xl mx-auto pb-10 md:py-32">
+    <div class="w-11/12 mx-auto pb-10 md:py-32">
       
       <HeadingSeparator title="Trending"/>
 
-      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-6 md:overflow-hidden">
+      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
         <MovieCard
           v-for="item in moviesStore.trending"
           :item="item"
@@ -31,7 +31,7 @@ onMounted(() => {
 
       <HeadingSeparator title="Top rated"/>
 
-      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-6 md:overflow-hidden">
+      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
         <MovieCard
           v-for="item in moviesStore.topRated"
           :item="item"

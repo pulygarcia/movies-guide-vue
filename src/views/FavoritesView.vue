@@ -11,7 +11,7 @@ const moviesStore = useMoviesStore();
   <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black h-screen">
     <Header />
 
-    <div class="w-11/12 md:max-w-screen-xl mx-auto pb-10 md:py-32">
+    <div class="w-11/12 mx-auto pb-10 md:py-32">
       <HeadingSeparator title="Favorites"/>
 
       <section v-if="moviesStore.favorites.length" class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-6 md:overflow-hidden">
