@@ -4,6 +4,7 @@
   import { useRoute } from 'vue-router';
   import {useMoviesStore} from '../stores/moviesStore'
   import Alert from '@/components/Alert.vue';
+import Spinner from '@/components/Spinner.vue';
 
   const route = useRoute();
   const id = route.params.id;
@@ -23,7 +24,9 @@
 
   <Alert v-if="moviesStore.successMessage != ''" :message="moviesStore.successMessage"/>
 
-  <div class="h-full md:h-screen w-full flex flex-col justify-center"
+  <Spinner v-if="moviesStore.loading"/>
+
+  <div v-else class="h-full md:h-screen w-full flex flex-col justify-center"
     :style="{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://image.tmdb.org/t/p/original/${movie.poster_path}`, backgroundPosition: 'center'}"
   >
     <div class="w-11/12 py-12 md:max-w-screen-xl mx-auto flex flex-col md:flex-row gap-4 md:gap-8 overflow-hidden">

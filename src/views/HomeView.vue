@@ -1,23 +1,39 @@
 <script setup>
 import Header from '@/components/Header.vue';
-import { onMounted } from 'vue';
+import Spinner from '@/components/Spinner.vue';
+import { onMounted, ref } from 'vue';
 import {useMoviesStore} from '../stores/moviesStore'
 import MovieCard from '../components/MovieCard.vue'
 import HeadingSeparator from '@/components/HeadingSeparator.vue';
 
 const moviesStore = useMoviesStore();
+const loading = ref(false);
 
-onMounted(() => {
-  moviesStore.getTrending();
-  moviesStore.getTopRated();
-})
+onMounted(async () => {
+  loading.value = true;
+  
+  try {
+    await Promise.all([
+      moviesStore.getTrending(),
+      moviesStore.getTopRated()
+    ]);
+  } catch (error) {
+    console.error('Error al cargar datos:', error);
+  }finally{
+    setTimeout(() => {
+      loading.value = false
+    }, 1000);
+  }
+});
 </script>
 
 <template>
   <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black">
     <Header />
 
-    <div class="w-11/12 mx-auto pb-10 md:py-32">
+    <Spinner v-if="loading"/>
+
+    <div v-else class="w-11/12 mx-auto pb-10 md:py-32">
       
       <HeadingSeparator title="Trending"/>
 
