@@ -10,7 +10,10 @@ const moviesStore = useMoviesStore();
 </script>
 
 <template>
-  <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black h-screen md:h-auto">
+  <section 
+    class="bg-gradient-to-r from-gray-800 via-gray-900 to-black"
+    :class="moviesStore.favorites.length ? 'h-screen md:h-auto' : 'h-screen'"
+  >
     <Header />
 
     <Spinner v-if="moviesStore.loading"/>
