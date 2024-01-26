@@ -1,8 +1,26 @@
 <script setup>
   import { useRouter, useRoute } from 'vue-router';
+  import { ref } from 'vue';
+  import apiServices from '../api/services'
+  import {useMoviesStore} from '../stores/moviesStore'
 
   const router = useRouter();
   const route = useRoute();
+  const moviesStore = useMoviesStore();
+
+  const search = ref('');
+
+  const busqueda = async () => {
+    //console.log(search.value);
+    try {
+      const {data} = await apiServices.search(search.value);
+      //console.log(data);
+      moviesStore.foundMovies = data.results;
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
 </script>
 
 <template>
@@ -41,8 +59,9 @@
         </svg>
       </div>
       
-      <!-- PENDING: MAKE WORK THE INPUT -->
       <input 
+        v-model="search"
+        @input="busqueda"
         type="text" id="search-navbar" 
         class="block w-full p-2 ps-10 text-sm text-white border border-gray-300 rounded-lg bg-slate-900"
         placeholder="Search..."

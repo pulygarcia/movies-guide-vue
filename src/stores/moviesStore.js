@@ -6,6 +6,7 @@ export const useMoviesStore = defineStore('movies', () => {
     const loading = ref(false);
     const trending = ref([]);
     const topRated = ref([]);
+    const foundMovies = ref([]);
     const successMessage = ref('');
     const favorites = ref([]);
 
@@ -107,6 +108,7 @@ export const useMoviesStore = defineStore('movies', () => {
         trending,
         favorites,
         topRated,
+        foundMovies,
         loading,
         successMessage
     }

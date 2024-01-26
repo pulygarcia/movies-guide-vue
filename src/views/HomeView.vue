@@ -34,26 +34,35 @@ onMounted(async () => {
     <Spinner v-if="loading"/>
 
     <div v-else class="w-11/12 mx-auto pb-10 md:py-32">
-      
-      <HeadingSeparator title="Trending"/>
+      <!-- Searcher have something-->
+      <div v-if="moviesStore.foundMovies.length">
+          <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
+            <MovieCard
+              v-for="movie in moviesStore.foundMovies"
+              :item="movie"
+              :key="movie.id"
+            />
+          </section>
+      </div>
 
-      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
-        <MovieCard
-          v-for="item in moviesStore.trending"
-          :item="item"
-          :key="item.id"
-        />
-      </section>
-
-      <HeadingSeparator title="Top rated"/>
-
-      <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
-        <MovieCard
-          v-for="item in moviesStore.topRated"
-          :item="item"
-          :key="item.id"
-        />
-      </section>
-    </div>
+      <div v-else> <!-- Searcher is empty-->
+        <HeadingSeparator title="Trending"/>
+        <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
+          <MovieCard
+            v-for="item in moviesStore.trending"
+            :item="item"
+            :key="item.id"
+          />
+        </section>
+        <HeadingSeparator title="Top rated"/>
+        <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
+          <MovieCard
+            v-for="item in moviesStore.topRated"
+            :item="item"
+            :key="item.id"
+          />
+        </section>
+            </div>
+      </div>
   </section>
 </template>

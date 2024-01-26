@@ -9,5 +9,8 @@ export default {
     },
     findByID(id){
         return api.get(`/movie/${id}?api_key=21fa1f67a92883c0b826f4e6d6e925c5`)
+    },
+    search(movieName){
+        return api.get(`/search/movie?query=${movieName}&api_key=21fa1f67a92883c0b826f4e6d6e925c5`)
     }
 }
