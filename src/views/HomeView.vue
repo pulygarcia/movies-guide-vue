@@ -36,7 +36,7 @@ onMounted(async () => {
     <div v-else class="w-11/12 mx-auto pb-10 md:py-32">
       <!-- Searcher have something-->
       <div v-if="moviesStore.foundMovies.length">
-          <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden">
+          <section class="flex overflow-x-scroll snap-x-mandatory whitespace-nowrap gap-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-6 md:overflow-hidden h-screen md:h-auto py-10">
             <MovieCard
               v-for="movie in moviesStore.foundMovies"
               :item="movie"
