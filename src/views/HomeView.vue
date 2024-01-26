@@ -5,6 +5,7 @@ import { onMounted, ref } from 'vue';
 import {useMoviesStore} from '../stores/moviesStore'
 import MovieCard from '../components/MovieCard.vue'
 import HeadingSeparator from '@/components/HeadingSeparator.vue';
+import Footer from '@/components/Footer.vue';
 
 const moviesStore = useMoviesStore();
 const loading = ref(false);
@@ -64,5 +65,7 @@ onMounted(async () => {
         </section>
             </div>
       </div>
+
+      <Footer />
   </section>
 </template>

@@ -4,7 +4,8 @@
   import { useRoute } from 'vue-router';
   import {useMoviesStore} from '../stores/moviesStore'
   import Alert from '@/components/Alert.vue';
-import Spinner from '@/components/Spinner.vue';
+  import Spinner from '@/components/Spinner.vue';
+  import Footer from '@/components/Footer.vue';
 
   const route = useRoute();
   const id = route.params.id;
@@ -76,5 +77,7 @@ import Spinner from '@/components/Spinner.vue';
         </div>
       </div>
     </div>
+
+    <Footer />
   </div>
 </template>

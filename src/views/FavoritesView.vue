@@ -4,12 +4,13 @@ import HeadingSeparator from '@/components/HeadingSeparator.vue';
 import MovieCard from '@/components/MovieCard.vue';
 import { useMoviesStore } from '../stores/moviesStore'
 import Spinner from '@/components/Spinner.vue';
+import Footer from '@/components/Footer.vue';
 
 const moviesStore = useMoviesStore();
 </script>
 
 <template>
-  <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black h-screen">
+  <section class="bg-gradient-to-r from-gray-800 via-gray-900 to-black h-screen md:h-auto">
     <Header />
 
     <Spinner v-if="moviesStore.loading"/>
@@ -32,5 +33,7 @@ const moviesStore = useMoviesStore();
         <a href="/" class="text-yellow-500 underline">Start adding</a>
       </div>
     </div>
+
+    <Footer />
   </section>
 </template>
